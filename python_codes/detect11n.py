@@ -7,7 +7,7 @@ images_path = 'images'
 model = YOLO("yolo11n.pt")  # pretrained YOLO11n model
 
 # Run batched inference on a list of images
-results = model(source=images_path, stream=False, save=True, project='yolo11n')  # return a generator of Results objects
+results = model(source=images_path, stream=False, save=True, save_txt=True, save_conf=True, project='yolo11n')  # return a generator of Results objects
 
 # Process results generator
 for result in results:
