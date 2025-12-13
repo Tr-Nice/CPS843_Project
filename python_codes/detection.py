@@ -19,21 +19,7 @@ for i, result in enumerate(results):
     obb = result.obb  # Oriented boxes object for OBB outputs
     #result.show()  # display to screen
 
-model = YOLO("yolov3u.pt")
-
-# Run batched inference on a list of images
-results = model(source=images_path, stream=True, save=True, project='yolov3u')  # return a generator of Results objects
-
-# Process results generator
-for i, result in enumerate(results):
-    boxes = result.boxes  # Boxes object for bounding box outputs
-    masks = result.masks  # Masks object for segmentation masks outputs
-    keypoints = result.keypoints  # Keypoints object for pose outputs
-    probs = result.probs  # Probs object for classification outputs
-    obb = result.obb  # Oriented boxes object for OBB outputs
-    #result.show()  # display to screen
-
-model = YOLO("yolov8n.pt")
+model = YOLO("yolov8n.pt") # pretrained YOLO8n model
 
 # Run batched inference on a list of images
 results = model(source=images_path, stream=True, save=True, project='yolov8n')  # return a generator of Results objects
@@ -46,3 +32,17 @@ for i, result in enumerate(results):
     probs = result.probs  # Probs object for classification outputs
     obb = result.obb  # Oriented boxes object for OBB outputs
     #result.show()  # display to screen
+
+model = YOLO("yolov3u.pt") # pretrained YOLO3u model
+
+# Run batched inference on a list of images
+results = model(source=images_path, stream=True, save=True, project='yolov3u')  # return a generator of Results objects
+
+# Process results generator
+for i, result in enumerate(results):
+    boxes = result.boxes  # Boxes object for bounding box outputs
+    masks = result.masks  # Masks object for segmentation masks outputs
+    keypoints = result.keypoints  # Keypoints object for pose outputs
+    probs = result.probs  # Probs object for classification outputs
+    obb = result.obb  # Oriented boxes object for OBB outputs
+    #result.show()  # display to screen    
