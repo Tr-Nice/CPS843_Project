@@ -7,7 +7,7 @@ model = YOLO("yolov5nu.pt") # pretrained YOLOv5n model
 
 for i in range(0,5):
     # Run batched inference on a list of images
-    results = model(source=images_path, stream=False, save=True, save_txt=True, save_conf=True, project='yolov5n')  # return a generator of Results objects
+    results = model(source=images_path, stream=False, save=True, save_txt=True, save_conf=True, project='yolov5nu')  # return a generator of Results objects
 
 
 # Process results generator
