@@ -1,7 +1,14 @@
-model = YOLO("yolov5nu.pt")
+#This code has been adapted from https://docs.ultralytics.com/modes/predict/#key-features-of-predict-mode
+from ultralytics import YOLO
+# Define the filepath to the images
+images_path = 'images'
 
-# Run batched inference on a list of images
-results = model(source=images_path, stream=True, save=True, project='yolov5nu')  # return a generator of Results objects
+model = YOLO("yolov5nu.pt") # pretrained YOLOv5n model
+
+for i in range(0,5):
+    # Run batched inference on a list of images
+    results = model(source=images_path, stream=False, save=True, save_txt=True, save_conf=True, project='yolov5n')  # return a generator of Results objects
+
 
 # Process results generator
 for i, result in enumerate(results):
