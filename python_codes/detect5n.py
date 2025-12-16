@@ -11,7 +11,7 @@ for i in range(0,5):
 
 
 # Process results generator
-for i, result in enumerate(results):
+for  result in results:
     boxes = result.boxes  # Boxes object for bounding box outputs
     masks = result.masks  # Masks object for segmentation masks outputs
     keypoints = result.keypoints  # Keypoints object for pose outputs
